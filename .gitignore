@@ -1,8 +1,5 @@
-
-*.vmdk
-
-*.ovf
-
-*.iso
-
 *.swp
+
+output/
+
+packer_cache/
