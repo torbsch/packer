@@ -1,18 +1,16 @@
 {
   "variables": {
-		"ISO_URL":        "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.9.0-amd64-netinst.iso",
-    "ISO_SUM":        "d4a22c81c76a66558fb92e690ef70a5d67c685a08216701b15746586520f6e8e",
+    "ISO_URL":        "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.3.0-amd64-netinst.iso",
+    "ISO_SUM":        "6a901b5abe43d88b39d627e1339d15507cc38f980036b928f835e0f0e957d3d8",
     "VBOX_VERSION":   "5.0.16",
     "VM_DISK_SIZE":   "5120",
-    "VM_NAME":        "stretch64"
+    "VM_NAME":        "buster64"
   },
 	"provisioners": [
     {
       "execute_command": "echo 'vagrant' | sudo -S sh -c '{{.Vars}} {{.Path}}'",
       "scripts": [
-				"scripts/setpasswordlesssudoforvagrant.sh",
-        "scripts/installvboxguestadditions.sh"
-      ],
+				"scripts/setpasswordlesssudoforvagrant.sh"],
 			"type": "shell",
 			"only": ["virtualbox-iso"]
     }
@@ -40,8 +38,6 @@
 			"ssh_port": 22,
 			"ssh_wait_timeout": "10000s",
 			"shutdown_command": "echo '/sbin/halt -h -p' > shutdown.sh; echo 'vagrant'|sudo -S bash 'shutdown.sh'",
-			"guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
-			"virtualbox_version_file": ".vbox_version",
 			"vboxmanage": [
 			["modifyvm", "{{.Name}}", "--memory", "1024"]
 			]
