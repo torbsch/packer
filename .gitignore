@@ -1,5 +1,5 @@
 *.swp
-
 output/
-
 packer_cache/
+Vagrantfile
+.vagrant/
