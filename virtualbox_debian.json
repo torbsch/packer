@@ -9,7 +9,8 @@
     {
       "execute_command": "echo 'vagrant' | sudo -S sh -c '{{.Vars}} {{.Path}}'",
       "scripts": [
-				"scripts/setpasswordlesssudoforvagrant.sh"],
+				"scripts/setpasswordlesssudoforvagrant.sh",
+                "scripts/installvboxguestadditions.sh"],
 			"type": "shell",
 			"only": ["virtualbox-iso"]
     }
