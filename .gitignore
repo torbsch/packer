@@ -3,3 +3,4 @@ output/
 packer_cache/
 Vagrantfile
 .vagrant/
+vars.json
